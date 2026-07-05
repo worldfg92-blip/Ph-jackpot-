@@ -1,0 +1,418 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #05070d;
+  --panel: #0d1220;
+  --panel-2: #10162a;
+  --border: #1f2540;
+  --yellow: #ffc21a;
+  --yellow-2: #ffb400;
+  --text: #ffffff;
+  --muted: #9aa3b2;
+  --green: #22c55e;
+  --purple: #4b3aa0;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 90px;
+  position: relative;
+}
+
+/* ================= TOP BAR ================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px 10px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo {
+  border: 2px solid var(--yellow);
+  color: var(--yellow);
+  font-weight: 900;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.brand-title { color: var(--yellow); font-weight: 700; font-size: 20px; }
+.top-actions { display: flex; gap: 14px; align-items: center; }
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  position: relative;
+  cursor: pointer;
+}
+.icon-btn .dot {
+  position: absolute; top: -2px; right: -2px;
+  width: 8px; height: 8px; background: var(--yellow); border-radius: 50%;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  padding: 10px 18px 18px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 40%, rgba(255,193,26,0.25), transparent 55%),
+    linear-gradient(180deg, #0a0e1c 0%, #05070d 100%);
+  z-index: 0;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -40px; top: 20px;
+  width: 320px; height: 420px;
+  background: radial-gradient(ellipse at center, rgba(255,193,26,0.35), transparent 60%);
+  z-index: 0;
+}
+
+.balance-card {
+  position: relative;
+  z-index: 2;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 260px;
+}
+.balance-label {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+.balance-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+.balance-amount { font-size: 22px; font-weight: 700; }
+.eye { color: var(--muted); font-size: 16px; }
+.balance-actions { display: flex; gap: 8px; margin-top: 12px; }
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 800;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.btn-primary {
+  background: var(--yellow);
+  color: #111;
+}
+.btn-ghost {
+  background: #1a2036;
+  color: #fff;
+}
+.btn-lg { padding: 14px 22px; font-size: 15px; border-radius: 10px; }
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  margin-top: 26px;
+  max-width: 55%;
+}
+.hero-text h1 {
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.05;
+  font-style: italic;
+}
+.white { color: #fff; }
+.yellow { color: var(--yellow); }
+.hero-sub {
+  margin-top: 14px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.hero-big {
+  color: var(--yellow);
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+  margin: 8px 0 18px;
+}
+
+/* Player photo — hero image of players with trophy */
+.hero-players {
+  position: absolute;
+  right: -30px;
+  top: 20px;
+  width: 62%;
+  max-width: 320px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 55%, transparent 85%);
+          mask-image: radial-gradient(ellipse at 50% 45%, #000 55%, transparent 85%);
+}
+
+/* ================= CATEGORIES ================= */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  padding: 8px 14px 18px;
+  overflow-x: auto;
+}
+.cat {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 6px;
+  text-align: center;
+  font-size: 12px;
+  color: #cbd5e1;
+  min-width: 60px;
+}
+.cat.active { color: var(--yellow); border-color: #3a3208; }
+.cat-icon {
+  font-size: 22px;
+  margin-bottom: 6px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.cat-icon.red { color: #ff3838; }
+.cat-icon.blue { color: #22c1c3; font-weight: 900; font-size: 22px; font-style: italic; }
+.live-tag {
+  position: absolute;
+  font-size: 8px;
+  background: #ff3838;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 3px;
+  top: -6px;
+  right: -8px;
+  font-weight: 800;
+}
+
+/* ================= SECTIONS ================= */
+.section { padding: 4px 18px 16px; }
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.section-head h3 {
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-icon { font-size: 18px; }
+.view-all {
+  color: var(--yellow);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= MATCHES ================= */
+.matches {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.matches::-webkit-scrollbar { display: none; }
+.match-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  min-width: 220px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.league { color: #fff; font-size: 12px; line-height: 1.4; }
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 12px 0 10px;
+}
+.team { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; }
+.vs { color: var(--muted); font-size: 13px; }
+.crest {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: #111;
+}
+.crest.arsenal { background: #ef0107; color: #fff; }
+.crest.chelsea { background: #034694; color: #fff; }
+.crest.manutd { background: #da020e; color: #fbe122; }
+.crest.liverpool { background: #c8102e; color: #fff; }
+.crest.madrid { background: #fff; color: #00529f; }
+.crest.barca { background: linear-gradient(180deg, #a50044 50%, #004d98 50%); color: #ffd700; }
+
+.badge {
+  background: rgba(255,193,26,0.15);
+  color: var(--yellow);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* ================= CHALLENGE CARD ================= */
+.challenge-card {
+  margin: 8px 18px 12px;
+  background: linear-gradient(90deg, #0f1230 0%, #1a1440 100%);
+  border: 1px solid var(--purple);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.trophy { font-size: 40px; }
+.challenge-text { flex: 1; }
+.challenge-text h4 { font-size: 16px; margin-bottom: 4px; }
+.challenge-text p { font-size: 12px; color: #cbd5e1; line-height: 1.4; }
+
+/* ================= WINNERS CARD ================= */
+.winners-card {
+  margin: 4px 18px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.winners-card .left { display: flex; align-items: center; gap: 10px; }
+.trophy-sm { font-size: 26px; }
+.winners-card h4 { font-size: 14px; }
+.winners-card p { font-size: 12px; color: var(--muted); }
+.winners-card .right { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.live-indicator { color: var(--green); font-weight: 700; font-size: 12px; display: inline-flex; align-items: center; gap: 4px; }
+.pulse { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+.amount { color: var(--green); font-weight: 800; }
+
+/* ================= GAMES ================= */
+.games {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.games::-webkit-scrollbar { display: none; }
+.game-card {
+  min-width: 130px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.game-thumb {
+  height: 110px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 8px;
+  background-size: cover;
+  background-position: center;
+}
+.game-thumb.pool { background: radial-gradient(circle at 30% 40%, #1e3a5f, #06121f); }
+.game-thumb.blackjack { background: radial-gradient(circle, #0a2e1a, #041108); }
+.game-thumb.roulette { background: radial-gradient(circle, #3b0d0d, #120303); }
+.game-thumb.bingo { background: radial-gradient(circle, #3b1e5c, #120520); }
+.game-thumb.slots { background: radial-gradient(circle, #5c1a00, #200800); color: #ff2b00; font-weight: 900; font-family: 'Impact', sans-serif; font-size: 42px; text-shadow: 0 0 10px #ff5500; }
+
+.game-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.tag {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  display: inline-block;
+}
+.tag.popular { background: rgba(255,140,0,0.15); color: #ff8c00; }
+.tag.classic { background: rgba(34,197,94,0.15); color: var(--green); }
+.tag.premium { background: rgba(34,193,243,0.15); color: #22c1f3; }
+.tag.new { background: rgba(139,92,246,0.2); color: #8b5cf6; }
+.tag.hot { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+/* ================= ALERT CARD ================= */
+.alert-card {
+  margin: 8px 18px 20px;
+  background: linear-gradient(90deg, #0f1230 0%, #1a1440 100%);
+  border: 1px solid var(--purple);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.alert-text { flex: 1; }
+.alert-text h4 { color: var(--yellow); font-size: 18px; font-weight: 900; letter-spacing: 1px; }
+.alert-text p { font-size: 12px; color: #fff; margin-top: 4px; }
+
+/* ================= BOTTOM NAV ================= */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: #0a0e18;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 14px;
+  z-index: 10;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav-item i { font-size: 20px; }
+.nav-item.active { color: var(--yellow); }

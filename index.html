@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHC Jackpot</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">PHC</span>
+      <span class="brand-title">Jackpot</span>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn bell">
+        <i class="fa-regular fa-bell"></i>
+        <span class="dot"></span>
+      </button>
+      <button class="icon-btn avatar">
+        <i class="fa-regular fa-circle-user"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <img class="hero-players" src="hero-players.png" alt="Players celebrating with trophy" />
+
+    <div class="balance-card">
+      <p class="balance-label">AVAILABLE BALANCE</p>
+      <div class="balance-row">
+        <h2 class="balance-amount">$ 4,994,730.00</h2>
+        <i class="fa-regular fa-eye eye"></i>
+      </div>
+      <div class="balance-actions">
+        <button class="btn btn-primary"><i class="fa-solid fa-circle-plus"></i> DEPOSIT</button>
+        <button class="btn btn-ghost"><i class="fa-solid fa-wallet"></i> WITHDRAW</button>
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <h1>
+        <span class="white">WIN BIG</span><br />
+        <span class="yellow">DREAM BIGGER</span>
+      </h1>
+      <p class="hero-sub">Predict 12 matches<br />and win up to</p>
+      <p class="hero-big">4.5 BILLION</p>
+      <button class="btn btn-primary btn-lg">PLAY NOW <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Category tabs -->
+  <nav class="categories">
+    <div class="cat active">
+      <div class="cat-icon">🎰</div>
+      <span>Jackpot</span>
+    </div>
+    <div class="cat">
+      <div class="cat-icon red"><i class="fa-solid fa-signal"></i><span class="live-tag">LIVE</span></div>
+      <span>Live</span>
+    </div>
+    <div class="cat">
+      <div class="cat-icon">👑</div>
+      <span>Slots</span>
+    </div>
+    <div class="cat">
+      <div class="cat-icon"><i class="fa-solid fa-spade"></i></div>
+      <span>Casino</span>
+    </div>
+    <div class="cat">
+      <div class="cat-icon red"><i class="fa-solid fa-plane-departure"></i></div>
+      <span>Aviator</span>
+    </div>
+    <div class="cat">
+      <div class="cat-icon blue">V</div>
+      <span>Virtuals</span>
+    </div>
+  </nav>
+
+  <!-- Tomorrow's Matches -->
+  <section class="section">
+    <div class="section-head">
+      <h3><span class="section-icon">⚽</span> Tomorrow's Matches</h3>
+      <a class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="matches">
+      <div class="match-card">
+        <p class="league">Premier League<br />15:00</p>
+        <div class="teams">
+          <div class="team"><div class="crest arsenal"></div><span>Arsenal</span></div>
+          <span class="vs">vs</span>
+          <div class="team"><div class="crest chelsea"></div><span>Chelsea</span></div>
+        </div>
+        <span class="badge upcoming">Upcoming</span>
+      </div>
+      <div class="match-card">
+        <p class="league">Premier League<br />17:30</p>
+        <div class="teams">
+          <div class="team"><div class="crest manutd"></div><span>Man Utd</span></div>
+          <span class="vs">vs</span>
+          <div class="team"><div class="crest liverpool"></div><span>Liverpool</span></div>
+        </div>
+        <span class="badge upcoming">Upcoming</span>
+      </div>
+      <div class="match-card">
+        <p class="league">La Liga<br />20:00</p>
+        <div class="teams">
+          <div class="team"><div class="crest madrid"></div><span>Real Madrid</span></div>
+          <span class="vs">vs</span>
+          <div class="team"><div class="crest barca"></div><span>Barcelona</span></div>
+        </div>
+        <span class="badge upcoming">Upcoming</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jackpot Challenge banner -->
+  <section class="challenge-card">
+    <div class="trophy">🏆</div>
+    <div class="challenge-text">
+      <h4>Jackpot Challenge</h4>
+      <p>Choose your card and enter the jackpot.<br />Predict 12 matches and win big!</p>
+    </div>
+    <button class="btn btn-primary">START GAME</button>
+  </section>
+
+  <!-- Live Winners -->
+  <section class="winners-card">
+    <div class="left">
+      <span class="trophy-sm">🏆</span>
+      <div>
+        <h4>Live Winners</h4>
+        <p>Be the first to win!</p>
+      </div>
+    </div>
+    <div class="right">
+      <span class="live-indicator"><span class="pulse"></span> LIVE</span>
+      <span class="amount">$0.00</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+  </section>
+
+  <!-- All Games -->
+  <section class="section">
+    <div class="section-head">
+      <h3><span class="section-icon">🎮</span> All Games</h3>
+      <a class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="games">
+      <div class="game-card">
+        <div class="game-thumb pool">🎱</div>
+        <p class="game-name">8-Ball Pool</p>
+        <span class="tag popular">🔥 POPULAR</span>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb blackjack">🂡🂫</div>
+        <p class="game-name">Blackjack</p>
+        <span class="tag classic">+ CLASSIC</span>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb roulette">🎡</div>
+        <p class="game-name">Roulette</p>
+        <span class="tag premium">💎 PREMIUM</span>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb bingo">🎱</div>
+        <p class="game-name">Bingo</p>
+        <span class="tag new">♦ NEW</span>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb slots">777</div>
+        <p class="game-name">Slots</p>
+        <span class="tag hot">🔥 HOT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jackpot Alert banner -->
+  <section class="alert-card">
+    <div class="trophy">🏆</div>
+    <div class="alert-text">
+      <h4>JACKPOT ALERT</h4>
+      <p>Win up to <span class="yellow">4.5 Billion</span> with just 12 predictions!</p>
+    </div>
+    <button class="btn btn-primary">PLAY NOW <i class="fa-solid fa-arrow-right"></i></button>
+  </section>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <div class="nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </div>
+    <div class="nav-item">
+      <i class="fa-solid fa-gamepad"></i>
+      <span>Predictor</span>
+    </div>
+    <div class="nav-item">
+      <i class="fa-solid fa-clock-rotate-left"></i>
+      <span>History</span>
+    </div>
+    <div class="nav-item">
+      <i class="fa-solid fa-wallet"></i>
+      <span>Wallet</span>
+    </div>
+    <div class="nav-item">
+      <i class="fa-solid fa-gear"></i>
+      <span>Settings</span>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>
